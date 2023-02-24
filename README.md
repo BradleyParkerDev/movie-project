@@ -70,3 +70,4 @@ setTitle(e.target.value)
 - For these two input fields, the state variables should be initialized to 0.
 - For the imdbRating input field, add the attribute step="0.1" to it so that you can increment the value by a tenth at a time.
 - <input type="number" step="0.1" />
+
