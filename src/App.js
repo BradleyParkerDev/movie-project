@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MovieForm from './MovieForm';
-
+import Table from './Table';
 class App extends Component{
 
   state = {
@@ -13,7 +13,7 @@ class App extends Component{
         imdbRating: 9.2,
         director: "Francis Ford Coppola",
         year: 1972,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       },
       {
         title: "The Shawshank Redemption",
@@ -23,7 +23,7 @@ class App extends Component{
         imdbRating: 9.3,
         director: "Frank Darabont",
         year: 1994,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       },
       {
         title: "The Dark Knight",
@@ -33,7 +33,7 @@ class App extends Component{
         imdbRating: 9.0,
         director: "Christopher Nolan",
         year: 2008,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       },
       {
         title: "Pulp Fiction",
@@ -43,7 +43,7 @@ class App extends Component{
         imdbRating: 8.9,
         director: "Quentin Tarantino",
         year: 1994,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       },
       {
         title: "The Lord of the Rings: The Return of the King",
@@ -53,7 +53,7 @@ class App extends Component{
         imdbRating: 8.9,
         director: "Peter Jackson",
         year: 2003,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       },
       {
         title: "Forrest Gump",
@@ -63,7 +63,7 @@ class App extends Component{
         imdbRating: 8.8,
         director: "Robert Zemeckis",
         year: 1994,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       },
       {
         title: "Inception",
@@ -73,7 +73,7 @@ class App extends Component{
         imdbRating: 8.8,
         director: "Christopher Nolan",
         year: 2010,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       },
       {
         title: "The Matrix",
@@ -83,7 +83,7 @@ class App extends Component{
         imdbRating: 8.7,
         director: "Lana Wachowski, Lilly Wachowski",
         year: 1999,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       },
       {
         title: "Schindler's List",
@@ -93,7 +93,7 @@ class App extends Component{
         imdbRating: 8.9,
         director: "Steven Spielberg",
         year: 1993,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       },
       {
         title: "Goodfellas",
@@ -103,19 +103,43 @@ class App extends Component{
         imdbRating: 8.7,
         director: "Martin Scorsese",
         year: 1990,
-        dateAdded: new Date(),
+        dateAdded: `${new Date()}`,
       }
     ]
   }
+  // create simple method here to remove character
+  removeMovie = (index) => {
+    //now that we've defined this.state, we can use 
+        const { movies } = this.state 
+
+        // we can use setState to update the state 
+        this.setState({
+            // remove movie at passed in index by returning 
+            // a new list excluding that character
+            movies: movies.filter((_, i) => {
+                return i !== index
+            }),
+        })
+  } 
 
   addMovie = movie =>{
-    this.setState({movies: [...this.state.movie, movie ]})
+    this.setState({movies: [...this.state.movies, movie ]})
 
   } 
 
   render(){
-    return (<MovieForm />)
-}
+    return (
+    <div className = "container">
+      <MovieForm addMovie={this.addMovie}/>
+      <Table
+        movieData={this.state.movies} 
+        removeMovie={this.removeMovie}
+      />
+    </div>
+
+
+    )
+  }
 } 
 
 export default App;
