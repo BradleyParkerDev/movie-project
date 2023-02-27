@@ -31,13 +31,16 @@ class MovieForm extends Component{
     onFormSubmit = (event) => {
         //standard code for onSubmits 
         event.preventDefault();
-        
+        const newDate = new Date().toString();
+        this.setState({date:newDate});
         //set the current state of our form to the handle submit
         this.props.addMovie(this.state);
 
         //clear inputs by setting form to inital state
-        this.setState(this.initialState);
+        this.initalState.date = newDate;
+        this.setState(this.initalState);
         
+
     }
 
     render(){
@@ -52,7 +55,7 @@ class MovieForm extends Component{
                     id = "title"
                     name= "title"
                     value = {title}
-                    autocomplete = "off"
+                    autoComplete = "off"
                     onChange = {this.handleChange}
                 /><br/>
                 <label htmlFor="actors">Actors: </label>  
@@ -61,7 +64,7 @@ class MovieForm extends Component{
                     id = "actors"
                     name= "actors"
                     value = {actors}
-                    autocomplete = "off"
+                    autoComplete = "off"
                     onChange = {this.handleChange}
                 /><br/>
                 <label htmlFor="plot">Plot: </label>  
@@ -70,7 +73,7 @@ class MovieForm extends Component{
                     id = "plot"
                     name= "plot"
                     value = {plot}
-                    autocomplete = "off"
+                    autoComplete = "off"
                     onChange = {this.handleChange}
                 /><br/>
                 <label htmlFor="imdbRating">IMDB Rating: </label>  
@@ -81,7 +84,7 @@ class MovieForm extends Component{
                     id = "imdbRating"
                     name= "imdbRating"
                     value = {imdbRating}
-                    autocomplete = "off"
+                    autoComplete = "off"
                     onChange = {this.handleChange}
                 /><br/>
                 <label htmlFor="director">Director: </label>  
@@ -90,7 +93,7 @@ class MovieForm extends Component{
                     id = "director"
                     name= "director"
                     value = {director}
-                    autocomplete = "off"
+                    autoComplete = "off"
                     onChange = {this.handleChange}
                 /><br/>
                 <label htmlFor="year">Year: </label>  
@@ -99,15 +102,13 @@ class MovieForm extends Component{
                     id = "year"
                     name= "year"
                     value = {year}
-                    autocomplete = "off"
+                    autoComplete = "off"
                     onChange = {this.handleChange}
                 /><br/>
                 <button type="submit">
                     Submit
                 </button>
             </form>
-
-        
         )
     }
 }
