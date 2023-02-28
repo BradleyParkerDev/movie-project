@@ -45,17 +45,32 @@ const TableHeader = () => {
 class Table extends Component {
     render(){
     //read props passed in from App.js
-    const { 
-        movieData, 
-        removeMovie
-      } = this.props;
-  
+      const { 
+          movieData, 
+          removeMovie,
+          filteredMovieData
+        } = this.props;
+      
+      // //Variable for data
+      // let tableData = []
+
+      // //if statement
+      // if(filteredMovie.length > 0){
+      //   tableData = {filteredMovie}
+      // }
+      // else{
+      //   tableData = {movieData}
+      // }
+
+
       return (
         <table>
           <TableHeader/>
           <TableBody 
-            data={movieData} 
+            data={filteredMovieData.length > 0  ? filteredMovieData : movieData}
+
             removeMovie={removeMovie}
+
             />
         </table>
       )

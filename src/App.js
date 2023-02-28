@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieForm from './MovieForm';
 import Table from './Table';
+import Search from './Search';
 class App extends Component{
 
   state = {
@@ -106,6 +107,8 @@ class App extends Component{
         dateAdded: `${new Date()}`,
       }
     ]
+    ,
+    filteredMovie : []
   }
   // create simple method here to remove character
   removeMovie = (index) => {
@@ -127,13 +130,26 @@ class App extends Component{
 
   } 
 
+  filterMovie = (searchInput,searchField )=>{
+    let searchResult = this.state.movies.filter((movie) => {
+      return movie[searchField].includes(searchInput)    
+    })
+    this.setState({filteredMovie: searchResult})
+  }
+
+
   render(){
     return (
     <div className = "container">
       <MovieForm addMovie={this.addMovie}/>
+      <br/>
+      <Search 
+        filterMovie ={this.filterMovie}
+      />
       <Table
         movieData={this.state.movies} 
         removeMovie={this.removeMovie}
+        filteredMovieData={this.state.filteredMovie}
       />
     </div>
 
