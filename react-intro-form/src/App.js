@@ -3,7 +3,7 @@ import './App.css';
 import Table from './components/Table'
 import MovieForm from './components/MovieForm';
 import SearchBar from './components/SearchBar';
-
+import NavBar from './components/Navbar';
 import { useEffect, useState } from 'react';
 import { Outlet } from "react-router-dom";
 
@@ -72,7 +72,7 @@ function App(props) {
 
 
 
-
+    <NavBar />
   <Outlet context={{moviePageMovie, movies,filterMovies,addMovie,removeMovie }}/>
 
 
