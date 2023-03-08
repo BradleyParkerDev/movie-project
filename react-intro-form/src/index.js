@@ -1,8 +1,52 @@
+import HomePage from './pages/HomePage';
+import MovieListPage from './pages/MovieListPage';
+import MoviePage from './pages/MoviePage';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children:[
+      {
+        index:true,
+        element: <HomePage/>
+      },
+      {
+        path: "/MovieListPage",
+        element: <MovieListPage/>
+      },
+      {
+        path: "/MoviePage",
+        element: <MoviePage />
+      }
+    ]
+
+  },
+]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
