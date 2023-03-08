@@ -1,16 +1,18 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 function SearchBar(props){
 
     // setting up the state 
     const [input, setInput] = useState("");
     const [field, setField] = useState("");
+    const navigate = useNavigate();
 
     const handleOnSubmit = e => {
         e.preventDefault();
         //show filtered results, call to function in App.js 
         props.filterMovies(input, field);
+        navigate(`/MoviePage`)
     } 
 
     return (

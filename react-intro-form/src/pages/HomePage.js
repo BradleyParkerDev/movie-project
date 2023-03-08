@@ -1,7 +1,16 @@
 import React from "react";
-const HomePage = () => {
+import MovieForm from "../components/MovieForm";
+import { Outlet, useNavigate, useOutletContext  } from "react-router-dom";
 
-    return
+const HomePage = () => {
+    const {addMovie} = useOutletContext();
+
+    return(
+        <div>
+            <MovieForm addMovie={addMovie}/>
+
+        </div>
+    );
 }
 
 export default HomePage;
