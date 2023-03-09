@@ -6,10 +6,9 @@ const HomePage = () => {
     const {addMovie} = useOutletContext();
 
     return(
-        <div>
-            <MovieForm addMovie={addMovie}/>
+        <> </>
+            // <MovieForm addMovie={addMovie}/>
 
-        </div>
     );
 }
 

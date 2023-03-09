@@ -1,6 +1,8 @@
 import HomePage from './pages/HomePage';
 import MovieListPage from './pages/MovieListPage';
 import MoviePage from './pages/MoviePage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import {
   createBrowserRouter,
   RouterProvider,

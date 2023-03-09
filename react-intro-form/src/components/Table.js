@@ -13,7 +13,7 @@
  */
 
  import React from "react";
-
+import table from "./table.css"
  /*
  create two simple function components to make
  our table code more readable
