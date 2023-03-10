@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
+import movieStyle from "../pages/movieStyle.css";
 
 const NavBar = () => {
     
@@ -24,9 +25,9 @@ const NavBar = () => {
 
 <div className = "App-header">
 
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+        <Navbar id = "movie-navbar" key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Brand href="#">Movie-Project</Navbar.Brand>
+            <Navbar.Brand className="movieProject" href="#">Movie-Project</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -34,15 +35,15 @@ const NavBar = () => {
               placement="end"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                <Offcanvas.Title className="movieProject" id={`offcanvasNavbarLabel-expand-${expand}`}>
                   Movie-Project
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="/">HomePage</Nav.Link>
-                  <Nav.Link href="/MovieListPage">MovieListPage</Nav.Link>
-                  <Nav.Link href="/MoviePage">MoviePage</Nav.Link>
+                  <Nav.Link href="/">Home Page</Nav.Link>
+                  <Nav.Link href="/MovieListPage">Movie List Page</Nav.Link>
+                  <Nav.Link href="/MoviePage">Movie Page</Nav.Link>
                 </Nav> 
       
               </Offcanvas.Body>

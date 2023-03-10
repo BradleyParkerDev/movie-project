@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Table from './components/Table'
+import Table from './components/MovieTable'
 import MovieForm from './components/MovieForm';
 import SearchBar from './components/SearchBar';
 import NavBar from './components/Navbar';
@@ -52,12 +52,6 @@ function App(props) {
 
   const filterMovies = (input, field) => {
 
-	// //show all films if there is no query 
-	// if (searchField.trim().length === 0) {
-	// 	setMovies(moviesData);
-	// 	return;
-	// }
-
 	 const moviesFiltered = movies.filter((movie) => {
 		   return movie[field].toLowerCase().includes(input.toLowerCase())
 	 })
@@ -67,34 +61,14 @@ function App(props) {
   
   
 
-  return (
- <div className="App">
+return (
 
-
-
+  <div className="App">
     <NavBar />
-  <Outlet context={{moviePageMovie, movies,filterMovies,addMovie,removeMovie }}/>
+    <Outlet context={{moviePageMovie, movies,filterMovies,addMovie,removeMovie }}/>
+  </div>
+    );
+  }
 
 
-
-
-
-
-  {/* <SearchBar	
-	filterMovies={filterMovies}
-  />
-  <Table 
-     movies={movies || []}
-     removeMovie={removeMovie}
-	
-  />
-  <MovieForm 
-    addMovie={addMovie}
-  /> */}
-</div>
-  );
-}
-
-
-  
 export default App;

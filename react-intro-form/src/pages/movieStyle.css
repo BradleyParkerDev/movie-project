@@ -1,0 +1,65 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+/* Navbar */
+#movie-navbar{
+    display: flex;
+    justify-content: center;
+    width:900px;
+}
+
+.movieProject{
+    font-weight: bolder;
+    font-size: 100%;
+    font-family: "Sans-serif","Arial";
+}
+/* Holds the table */
+#movie-container{
+    align-items: center;
+    width:900px;
+    /* border: dashed 2px black; */
+}
+
+/* Holds the form */
+#movie-form{
+    display: flex;
+    justify-content: center;
+    width:900px;
+    /* height: 300px; */
+    /* border: dashed 2px black;  */
+    padding:  10px 10px 10px 10px;
+}
+
+
+#addForm{
+    display: flex;
+    justify-content: center;
+}
+
+.movieInput{
+    height: 50px;
+}
+
+#movie-search{
+    padding-left: 200px;
+    /* border: dashed 2px black;  */
+}
+
+#homePhoto{
+    height: 400px;
+    width: 900px;
+}
+
+#homePageContainer{
+    display: flex;
+    justify-content: center;
+    width:900px;
+    /* border: dashed 2px black;  */
+
+}
+p{
+    font-size: 200px;
+    padding-top: 10px;
+}

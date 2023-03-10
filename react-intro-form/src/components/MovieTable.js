@@ -1,9 +1,4 @@
 /**
- * Table React Component 
- * 
- */
-
-/**
  * HTML REVIEW
  * thead -> table head 
  * tr -> table row 
@@ -12,13 +7,9 @@
  * td -> table cell
  */
 
- import React from "react";
-import table from "./table.css"
- /*
- create two simple function components to make
- our table code more readable
- */
- 
+import React from "react";
+import Table from 'react-bootstrap/Table';
+
  //TABLE HEADER SIMPLE COMPONENT
  const TableHeader = () => {
      return (
@@ -49,7 +40,7 @@ import table from "./table.css"
        return (
          <tr key={index}>
            <td>{row.title}</td>
-           <td>{row.actors.join(" ")}</td>
+           <td>{row.actors.join(", ")}</td>
            <td>{row.plot}</td>
            <td>{row.genre}</td>
            <td>{row.imdbRating}</td>
@@ -63,8 +54,11 @@ import table from "./table.css"
      //return rows wrapped in tbody
      return <tbody>{rows}</tbody>
    }
- // TABLE is our main Component
- const Table = (props) => {
+
+
+
+ // MovieTable is our main Component
+ const MovieTable = (props) => {
 
     const { 
       movies,
@@ -72,14 +66,18 @@ import table from "./table.css"
     } = props;
 
     return ( 
-      <table>
+
+
+      <Table striped bordered hover responsive="lg" >
         <TableHeader/>
         <TableBody 
           data={movies} 
           removeMovie={removeMovie}
         />
-      </table>
+    </Table>
+
     )
  }
- 
- export default Table
+
+
+ export default MovieTable

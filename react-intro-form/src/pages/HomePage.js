@@ -1,13 +1,27 @@
-import React from "react";
+// import React from "react";
 import MovieForm from "../components/MovieForm";
 import { Outlet, useNavigate, useOutletContext  } from "react-router-dom";
+import homePhoto from "./homePhoto.png"
+import movieStyle from "./movieStyle.css"
 
 const HomePage = () => {
-    const {addMovie} = useOutletContext();
+
+ 
 
     return(
-        <> </>
-            // <MovieForm addMovie={addMovie}/>
+        
+        <div>
+        <p>Welcome!</p>
+
+        <div id="homePageContainer">
+  
+        <img id='homePhoto' src={homePhoto}></img>
+
+        </div>
+
+
+        </div>
+
 
     );
 }
